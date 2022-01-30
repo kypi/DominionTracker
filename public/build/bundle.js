@@ -1,2 +1,1133 @@
-var app=function(){"use strict";function t(){}function n(t){return t()}function e(){return Object.create(null)}function o(t){t.forEach(n)}function r(t){return"function"==typeof t}function c(t,n){return t!=t?n==n:t!==n||t&&"object"==typeof t||"function"==typeof t}function u(t,n){t.appendChild(n)}function l(t,n,e){t.insertBefore(n,e||null)}function i(t){t.parentNode.removeChild(t)}function a(t,n){for(let e=0;e<t.length;e+=1)t[e]&&t[e].d(n)}function f(t){return document.createElement(t)}function s(t){return document.createTextNode(t)}function d(){return s(" ")}function m(t,n,e,o){return t.addEventListener(n,e,o),()=>t.removeEventListener(n,e,o)}function h(t,n){n=""+n,t.wholeText!==n&&(t.data=n)}function g(t,n){t.value=null==n?"":n}let p;function $(t){p=t}const y=[],b=[],v=[],x=[],_=Promise.resolve();let k=!1;function C(t){v.push(t)}const P=new Set;let E=0;function w(){const t=p;do{for(;E<y.length;){const t=y[E];E++,$(t),j(t.$$)}for($(null),y.length=0,E=0;b.length;)b.pop()();for(let t=0;t<v.length;t+=1){const n=v[t];P.has(n)||(P.add(n),n())}v.length=0}while(y.length);for(;x.length;)x.pop()();k=!1,P.clear(),$(t)}function j(t){if(null!==t.fragment){t.update(),o(t.before_update);const n=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,n),t.after_update.forEach(C)}}const A=new Set;let D;function N(t,n){t&&t.i&&(A.delete(t),t.i(n))}function O(t,n,e,o){if(t&&t.o){if(A.has(t))return;A.add(t),D.c.push((()=>{A.delete(t),o&&(e&&t.d(1),o())})),t.o(n)}}function S(t,e,c,u){const{fragment:l,on_mount:i,on_destroy:a,after_update:f}=t.$$;l&&l.m(e,c),u||C((()=>{const e=i.map(n).filter(r);a?a.push(...e):o(e),t.$$.on_mount=[]})),f.forEach(C)}function T(t,n){const e=t.$$;null!==e.fragment&&(o(e.on_destroy),e.fragment&&e.fragment.d(n),e.on_destroy=e.fragment=null,e.ctx=[])}function B(t,n){-1===t.$$.dirty[0]&&(y.push(t),k||(k=!0,_.then(w)),t.$$.dirty.fill(0)),t.$$.dirty[n/31|0]|=1<<n%31}function L(n,r,c,u,l,a,f,s=[-1]){const d=p;$(n);const m=n.$$={fragment:null,ctx:null,props:a,update:t,not_equal:l,bound:e(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(r.context||(d?d.$$.context:[])),callbacks:e(),dirty:s,skip_bound:!1,root:r.target||d.$$.root};f&&f(m.root);let h=!1;if(m.ctx=c?c(n,r.props||{},((t,e,...o)=>{const r=o.length?o[0]:e;return m.ctx&&l(m.ctx[t],m.ctx[t]=r)&&(!m.skip_bound&&m.bound[t]&&m.bound[t](r),h&&B(n,t)),e})):[],m.update(),h=!0,o(m.before_update),m.fragment=!!u&&u(m.ctx),r.target){if(r.hydrate){const t=function(t){return Array.from(t.childNodes)}(r.target);m.fragment&&m.fragment.l(t),t.forEach(i)}else m.fragment&&m.fragment.c();r.intro&&N(n.$$.fragment),S(n,r.target,r.anchor,r.customElement),w()}$(d)}class q{$destroy(){T(this,1),this.$destroy=t}$on(t,n){const e=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return e.push(n),()=>{const t=e.indexOf(n);-1!==t&&e.splice(t,1)}}$set(t){var n;this.$$set&&(n=t,0!==Object.keys(n).length)&&(this.$$.skip_bound=!0,this.$$set(t),this.$$.skip_bound=!1)}}function I(t,n,e){const o=t.slice();return o[8]=n[e],o[10]=e,o}function M(t){let n,e,r,c,u,a,g,p,$,y,b,v=t[8].name+"",x=t[8].count+"";function _(){return t[4](t[10])}function k(){return t[5](t[10])}return{c(){n=s(v),e=s(" count: "),r=s(x),c=d(),u=f("button"),u.textContent="+",a=d(),g=f("button"),g.textContent="-",p=d(),$=f("br")},m(t,o){l(t,n,o),l(t,e,o),l(t,r,o),l(t,c,o),l(t,u,o),l(t,a,o),l(t,g,o),l(t,p,o),l(t,$,o),y||(b=[m(u,"click",_),m(g,"click",k)],y=!0)},p(e,o){t=e,1&o&&v!==(v=t[8].name+"")&&h(n,v),1&o&&x!==(x=t[8].count+"")&&h(r,x)},d(t){t&&i(n),t&&i(e),t&&i(r),t&&i(c),t&&i(u),t&&i(a),t&&i(g),t&&i(p),t&&i($),y=!1,o(b)}}}function V(n){let e,o,r,c,m,g=n[0],p=[];for(let t=0;t<g.length;t+=1)p[t]=M(I(n,g,t));return{c(){e=f("div");for(let t=0;t<p.length;t+=1)p[t].c();o=d(),r=f("h3"),c=s("Player Sum: "),m=s(n[1])},m(t,n){l(t,e,n);for(let t=0;t<p.length;t+=1)p[t].m(e,null);u(e,o),u(e,r),u(r,c),u(r,m)},p(t,[n]){if(13&n){let r;for(g=t[0],r=0;r<g.length;r+=1){const c=I(t,g,r);p[r]?p[r].p(c,n):(p[r]=M(c),p[r].c(),p[r].m(e,o))}for(;r<p.length;r+=1)p[r].d(1);p.length=g.length}2&n&&h(m,t[1])},i:t,o:t,d(t){t&&i(e),a(p,t)}}}function z(t,n,e){let o=0,r=[{name:"Estate",value:1,count:0},{name:"Duchy",value:3,count:0},{name:"Province",value:6,count:0},{name:"Colony",type:"flat",value:10,count:0},{name:"Curse",value:-1,count:0},{name:"VP Token",value:1,count:0}];function c(t){console.log("Increasing "+r[t].name),r[t].count<12&&e(0,r[t].count+=1,r)}function u(t){console.log("Decreasing "+r[t].name),r[t].count>0&&e(0,r[t].count-=1,r)}return t.$$.update=()=>{1&t.$$.dirty&&function(){console.log("Calculating sum"),e(1,o=0);for(let t=0;t<r.length;t++)e(1,o+=r[t].count*r[t].value)}()},[r,o,c,u,t=>c(t),t=>u(t)]}class F extends q{constructor(t){super(),L(this,t,z,V,c,{})}}function G(t,n,e){const o=t.slice();return o[9]=n[e],o[10]=n,o[11]=e,o}function H(t){let n,e,o,r,c,a,h,p,$,y,b=t[11]+1+"";function v(){t[6].call(e,t[10],t[11])}return h=new F({}),{c(){var t;n=f("h2"),e=f("input"),o=s(" (Player "),r=s(b),c=s(") point counter:"),a=d(),(t=h.$$.fragment)&&t.c()},m(i,f){l(i,n,f),u(n,e),g(e,t[9].name),u(n,o),u(n,r),u(n,c),l(i,a,f),S(h,i,f),p=!0,$||(y=m(e,"input",v),$=!0)},p(n,o){t=n,1&o&&e.value!==t[9].name&&g(e,t[9].name)},i(t){p||(N(h.$$.fragment,t),p=!0)},o(t){O(h.$$.fragment,t),p=!1},d(t){t&&i(n),t&&i(a),T(h,t),$=!1,y()}}}function J(t){let n,e,r,c,g,p,$,y,b,v,x,_,k=t[0],C=[];for(let n=0;n<k.length;n+=1)C[n]=H(G(t,k,n));const P=t=>O(C[t],1,1,(()=>{C[t]=null}));return{c(){n=f("main"),e=f("h2"),e.textContent="Dominion Point Counter",r=s("\n\t\n\tPlayer Count: "),c=s(t[1]),g=d(),p=f("button"),p.textContent="+",$=d(),y=f("button"),y.textContent="-",b=d();for(let t=0;t<C.length;t+=1)C[t].c();var o,u,l;o=n,u="class",null==(l="svelte-1tky8bj")?o.removeAttribute(u):o.getAttribute(u)!==l&&o.setAttribute(u,l)},m(o,i){l(o,n,i),u(n,e),u(n,r),u(n,c),u(n,g),u(n,p),u(n,$),u(n,y),u(n,b);for(let t=0;t<C.length;t+=1)C[t].m(n,null);v=!0,x||(_=[m(p,"click",t[4]),m(y,"click",t[5])],x=!0)},p(t,[e]){if((!v||2&e)&&h(c,t[1]),1&e){let r;for(k=t[0],r=0;r<k.length;r+=1){const o=G(t,k,r);C[r]?(C[r].p(o,e),N(C[r],1)):(C[r]=H(o),C[r].c(),N(C[r],1),C[r].m(n,null))}for(D={r:0,c:[],p:D},r=k.length;r<C.length;r+=1)P(r);D.r||o(D.c),D=D.p}},i(t){if(!v){for(let t=0;t<k.length;t+=1)N(C[t]);v=!0}},o(t){C=C.filter(Boolean);for(let t=0;t<C.length;t+=1)O(C[t]);v=!1},d(t){t&&i(n),a(C,t),x=!1,o(_)}}}function K(t,n,e){let o=2,r=[{name:"Player1",score:0},{name:"Player2",score:0}];function c(){e(0,r=[...r,{name:"Player",score:0}])}function u(){e(0,r=[...r.slice(0,r.length-1)])}return t.$$.update=()=>{1&t.$$.dirty&&e(1,o=r.length)},[r,o,c,u,()=>c(),()=>u(),function(t,n){t[n].name=this.value,e(0,r)}]}return new class extends q{constructor(t){super(),L(this,t,K,J,c,{})}}({target:document.body,props:{name:"world"}})}();
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        input.value = value == null ? '' : value;
+    }
+    function custom_event(type, detail, bubbles = false) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, bubbles, false, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    // flush() calls callbacks in this order:
+    // 1. All beforeUpdate callbacks, in order: parents before children
+    // 2. All bind:this callbacks, in reverse order: children before parents.
+    // 3. All afterUpdate callbacks, in order: parents before children. EXCEPT
+    //    for afterUpdates called during the initial onMount, which are called in
+    //    reverse order: children before parents.
+    // Since callbacks might update component values, which could trigger another
+    // call to flush(), the following steps guard against this:
+    // 1. During beforeUpdate, any updated components will be added to the
+    //    dirty_components array and will cause a reentrant call to flush(). Because
+    //    the flush index is kept outside the function, the reentrant call will pick
+    //    up where the earlier call left off and go through all dirty components. The
+    //    current_component value is saved and restored so that the reentrant call will
+    //    not interfere with the "parent" flush() call.
+    // 2. bind:this callbacks cannot trigger new flush() calls.
+    // 3. During afterUpdate, any updated components will NOT have their afterUpdate
+    //    callback called a second time; the seen_callbacks set, outside the flush()
+    //    function, guarantees this behavior.
+    const seen_callbacks = new Set();
+    let flushidx = 0; // Do *not* move this inside the flush() function
+    function flush() {
+        const saved_component = current_component;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            while (flushidx < dirty_components.length) {
+                const component = dirty_components[flushidx];
+                flushidx++;
+                set_current_component(component);
+                update(component.$$);
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            flushidx = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        seen_callbacks.clear();
+        set_current_component(saved_component);
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+
+    const globals = (typeof window !== 'undefined'
+        ? window
+        : typeof globalThis !== 'undefined'
+            ? globalThis
+            : global);
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor, customElement) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        if (!customElement) {
+            // onMount happens before the initial afterUpdate
+            add_render_callback(() => {
+                const new_on_destroy = on_mount.map(run).filter(is_function);
+                if (on_destroy) {
+                    on_destroy.push(...new_on_destroy);
+                }
+                else {
+                    // Edge case - component was destroyed immediately,
+                    // most likely as a result of a binding initialising
+                    run_all(new_on_destroy);
+                }
+                component.$$.on_mount = [];
+            });
+        }
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            on_disconnect: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false,
+            root: options.target || parent_component.$$.root
+        };
+        append_styles && append_styles($$.root);
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, options.props || {}, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor, options.customElement);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    /**
+     * Base class for Svelte components. Used when dev=false.
+     */
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.46.3' }, detail), true));
+    }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    /**
+     * Base class for Svelte components with some minor dev-enhancements. Used when dev=true.
+     */
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error("'target' is a required option");
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn('Component was already destroyed'); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    /* src\point_counter.svelte generated by Svelte v3.46.3 */
+
+    const { console: console_1 } = globals;
+    const file$1 = "src\\point_counter.svelte";
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[9] = list[i];
+    	child_ctx[11] = i;
+    	return child_ctx;
+    }
+
+    // (50:4) {#each base_cards as base_card,base_card_index}
+    function create_each_block$1(ctx) {
+    	let tr;
+    	let td0;
+    	let t0_value = /*base_card*/ ctx[9].name + "";
+    	let t0;
+    	let td1;
+    	let t1_value = /*base_card*/ ctx[9].count + "";
+    	let t1;
+    	let t2;
+    	let td2;
+    	let button0;
+    	let t4;
+    	let td3;
+    	let button1;
+    	let t6;
+    	let mounted;
+    	let dispose;
+
+    	function click_handler() {
+    		return /*click_handler*/ ctx[4](/*base_card_index*/ ctx[11]);
+    	}
+
+    	function click_handler_1() {
+    		return /*click_handler_1*/ ctx[5](/*base_card_index*/ ctx[11]);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			td1 = element("td");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			td2 = element("td");
+    			button0 = element("button");
+    			button0.textContent = "+";
+    			t4 = space();
+    			td3 = element("td");
+    			button1 = element("button");
+    			button1.textContent = "-";
+    			t6 = space();
+    			add_location(td0, file$1, 51, 12, 1674);
+    			add_location(td1, file$1, 51, 37, 1699);
+    			attr_dev(button0, "class", "button is-primary is-large");
+    			add_location(button0, file$1, 53, 8, 1754);
+    			add_location(td2, file$1, 52, 12, 1740);
+    			attr_dev(button1, "class", "button is-danger is-large");
+    			add_location(button1, file$1, 54, 12, 1878);
+    			add_location(td3, file$1, 54, 8, 1874);
+    			add_location(tr, file$1, 50, 8, 1651);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, td1);
+    			append_dev(td1, t1);
+    			append_dev(tr, t2);
+    			append_dev(tr, td2);
+    			append_dev(td2, button0);
+    			append_dev(tr, t4);
+    			append_dev(tr, td3);
+    			append_dev(td3, button1);
+    			append_dev(tr, t6);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button0, "click", click_handler, false, false, false),
+    					listen_dev(button1, "click", click_handler_1, false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*base_cards*/ 1 && t0_value !== (t0_value = /*base_card*/ ctx[9].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*base_cards*/ 1 && t1_value !== (t1_value = /*base_card*/ ctx[9].count + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$1.name,
+    		type: "each",
+    		source: "(50:4) {#each base_cards as base_card,base_card_index}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let div;
+    	let h3;
+    	let t0;
+    	let t1;
+    	let t2;
+    	let table;
+    	let tr;
+    	let th0;
+    	let th1;
+    	let th2;
+    	let th3;
+    	let t7;
+    	let each_value = /*base_cards*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h3 = element("h3");
+    			t0 = text("Victory Points: ");
+    			t1 = text(/*vp_sum*/ ctx[1]);
+    			t2 = space();
+    			table = element("table");
+    			tr = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Card";
+    			th1 = element("th");
+    			th1.textContent = "Count";
+    			th2 = element("th");
+    			th2.textContent = "Inc";
+    			th3 = element("th");
+    			th3.textContent = "Dec";
+    			t7 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(h3, "class", "title is-3");
+    			add_location(h3, file$1, 45, 4, 1433);
+    			add_location(th0, file$1, 47, 12, 1526);
+    			add_location(th1, file$1, 47, 25, 1539);
+    			add_location(th2, file$1, 47, 39, 1553);
+    			add_location(th3, file$1, 47, 51, 1565);
+    			add_location(tr, file$1, 47, 8, 1522);
+    			attr_dev(table, "class", "table");
+    			add_location(table, file$1, 46, 4, 1491);
+    			attr_dev(div, "class", "box");
+    			add_location(div, file$1, 43, 0, 1341);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h3);
+    			append_dev(h3, t0);
+    			append_dev(h3, t1);
+    			append_dev(div, t2);
+    			append_dev(div, table);
+    			append_dev(table, tr);
+    			append_dev(tr, th0);
+    			append_dev(tr, th1);
+    			append_dev(tr, th2);
+    			append_dev(tr, th3);
+    			append_dev(table, t7);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(table, null);
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*vp_sum*/ 2) set_data_dev(t1, /*vp_sum*/ ctx[1]);
+
+    			if (dirty & /*decreaseBaseCount, increaseBaseCount, base_cards*/ 13) {
+    				each_value = /*base_cards*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(table, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Point_counter', slots, []);
+    	let vp_sum = 0;
+
+    	let base_cards = [
+    		{ name: "Estate", value: 1, count: 0 },
+    		{ name: "Duchy", value: 3, count: 0 },
+    		{ name: "Province", value: 6, count: 0 },
+    		{
+    			name: "Colony",
+    			type: "flat",
+    			value: 10,
+    			count: 0
+    		},
+    		{ name: "Curse", value: -1, count: 0 },
+    		{ name: "VP Token", value: 1, count: 0 }
+    	];
+
+    	let optional_cards = [
+    		{
+    			name: "Duke",
+    			type: "conditional",
+    			value: "0",
+    			count: 0
+    		},
+    		{
+    			name: "Gardens", // 1 for each duchy
+    			type: "conditional",
+    			value: "0",
+    			count: 0
+    		}
+    	]; // 1 for each 10 cards?
+
+    	let temp_sum = 0;
+
+    	function CalculateSum() {
+    		console.log("Calculating sum");
+    		$$invalidate(1, vp_sum = 0);
+
+    		for (let card_index = 0; card_index < base_cards.length; card_index++) {
+    			$$invalidate(1, vp_sum += base_cards[card_index].count * base_cards[card_index].value);
+    		}
+    	} // return temp_sum;
+
+    	function increaseBaseCount(card_index) {
+    		console.log("Increasing " + base_cards[card_index].name);
+    		if (base_cards[card_index].count < 12) $$invalidate(0, base_cards[card_index].count += 1, base_cards);
+    	}
+
+    	function decreaseBaseCount(card_index) {
+    		console.log("Decreasing " + base_cards[card_index].name);
+    		if (base_cards[card_index].count > 0) $$invalidate(0, base_cards[card_index].count -= 1, base_cards);
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1.warn(`<Point_counter> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = base_card_index => increaseBaseCount(base_card_index);
+    	const click_handler_1 = base_card_index => decreaseBaseCount(base_card_index);
+
+    	$$self.$capture_state = () => ({
+    		vp_sum,
+    		base_cards,
+    		optional_cards,
+    		temp_sum,
+    		CalculateSum,
+    		increaseBaseCount,
+    		decreaseBaseCount
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('vp_sum' in $$props) $$invalidate(1, vp_sum = $$props.vp_sum);
+    		if ('base_cards' in $$props) $$invalidate(0, base_cards = $$props.base_cards);
+    		if ('optional_cards' in $$props) optional_cards = $$props.optional_cards;
+    		if ('temp_sum' in $$props) temp_sum = $$props.temp_sum;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*base_cards*/ 1) {
+    			(CalculateSum());
+    		}
+    	};
+
+    	return [
+    		base_cards,
+    		vp_sum,
+    		increaseBaseCount,
+    		decreaseBaseCount,
+    		click_handler,
+    		click_handler_1
+    	];
+    }
+
+    class Point_counter extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Point_counter",
+    			options,
+    			id: create_fragment$1.name
+    		});
+    	}
+    }
+
+    /* src\App.svelte generated by Svelte v3.46.3 */
+    const file = "src\\App.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[8] = list[i];
+    	child_ctx[9] = list;
+    	child_ctx[10] = i;
+    	return child_ctx;
+    }
+
+    // (30:1) {#each players as player,index}
+    function create_each_block(ctx) {
+    	let div;
+    	let h2;
+    	let input;
+    	let t0;
+    	let t1_value = /*player*/ ctx[8].name + "";
+    	let t1;
+    	let t2;
+    	let t3_value = /*index*/ ctx[10] + 1 + "";
+    	let t3;
+    	let t4;
+    	let t5;
+    	let pointcounter;
+    	let t6;
+    	let current;
+    	let mounted;
+    	let dispose;
+
+    	function input_input_handler() {
+    		/*input_input_handler*/ ctx[6].call(input, /*each_value*/ ctx[9], /*index*/ ctx[10]);
+    	}
+
+    	pointcounter = new Point_counter({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h2 = element("h2");
+    			input = element("input");
+    			t0 = text(" (");
+    			t1 = text(t1_value);
+    			t2 = text(" P");
+    			t3 = text(t3_value);
+    			t4 = text(") point counter:");
+    			t5 = space();
+    			create_component(pointcounter.$$.fragment);
+    			t6 = space();
+    			attr_dev(input, "class", "input is-primary");
+    			add_location(input, file, 31, 26, 1045);
+    			attr_dev(h2, "class", "title is-2");
+    			add_location(h2, file, 31, 2, 1021);
+    			attr_dev(div, "class", "column");
+    			add_location(div, file, 30, 2, 997);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h2);
+    			append_dev(h2, input);
+    			set_input_value(input, /*player*/ ctx[8].name);
+    			append_dev(h2, t0);
+    			append_dev(h2, t1);
+    			append_dev(h2, t2);
+    			append_dev(h2, t3);
+    			append_dev(h2, t4);
+    			append_dev(div, t5);
+    			mount_component(pointcounter, div, null);
+    			append_dev(div, t6);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(input, "input", input_input_handler);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+
+    			if (dirty & /*players*/ 1 && input.value !== /*player*/ ctx[8].name) {
+    				set_input_value(input, /*player*/ ctx[8].name);
+    			}
+
+    			if ((!current || dirty & /*players*/ 1) && t1_value !== (t1_value = /*player*/ ctx[8].name + "")) set_data_dev(t1, t1_value);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(pointcounter.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(pointcounter.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_component(pointcounter);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(30:1) {#each players as player,index}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment(ctx) {
+    	let main;
+    	let h2;
+    	let t1;
+    	let t2;
+    	let t3;
+    	let button0;
+    	let t5;
+    	let button1;
+    	let t7;
+    	let div;
+    	let current;
+    	let mounted;
+    	let dispose;
+    	let each_value = /*players*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			h2 = element("h2");
+    			h2.textContent = "Dominion Point Counter";
+    			t1 = text("\r\n\t\r\n\tPlayer Count: ");
+    			t2 = text(/*player_count*/ ctx[1]);
+    			t3 = space();
+    			button0 = element("button");
+    			button0.textContent = "+";
+    			t5 = space();
+    			button1 = element("button");
+    			button1.textContent = "-";
+    			t7 = space();
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(h2, file, 23, 1, 686);
+    			attr_dev(button0, "class", "button is-primary");
+    			add_location(button0, file, 26, 1, 784);
+    			attr_dev(button1, "class", "button is-danger");
+    			add_location(button1, file, 27, 1, 860);
+    			attr_dev(div, "class", "columns");
+    			add_location(div, file, 28, 1, 938);
+    			add_location(main, file, 22, 0, 677);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, h2);
+    			append_dev(main, t1);
+    			append_dev(main, t2);
+    			append_dev(main, t3);
+    			append_dev(main, button0);
+    			append_dev(main, t5);
+    			append_dev(main, button1);
+    			append_dev(main, t7);
+    			append_dev(main, div);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button0, "click", /*click_handler*/ ctx[4], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[5], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*player_count*/ 2) set_data_dev(t2, /*player_count*/ ctx[1]);
+
+    			if (dirty & /*players*/ 1) {
+    				each_value = /*players*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			destroy_each(each_blocks, detaching);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('App', slots, []);
+    	let player_count = 2;
+    	let players = [{ name: "Anthony", score: 0 }, { name: "Susan", score: 0 }];
+
+    	let optional_cards = [
+    		{
+    			name: "Colony",
+    			type: "flat",
+    			value: "10"
+    		},
+    		{
+    			name: "Duke",
+    			type: "conditional",
+    			value: "0"
+    		},
+    		{
+    			name: "Gardens", // 1 for each duchy
+    			type: "conditional",
+    			value: "0"
+    		}
+    	]; // 1 for each 10 cards?
+
+    	function addPlayer() {
+    		$$invalidate(0, players = [...players, { name: "Player", score: 0 }]); // 1, 2, 3, 4, 5
+    	}
+
+    	function removePlayer() {
+    		if (players.length > 2) $$invalidate(0, players = [...players.slice(0, players.length - 1)]); // 1, 2, 3
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = () => addPlayer();
+    	const click_handler_1 = () => removePlayer();
+
+    	function input_input_handler(each_value, index) {
+    		each_value[index].name = this.value;
+    		$$invalidate(0, players);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		PointCounter: Point_counter,
+    		player_count,
+    		players,
+    		optional_cards,
+    		addPlayer,
+    		removePlayer
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('player_count' in $$props) $$invalidate(1, player_count = $$props.player_count);
+    		if ('players' in $$props) $$invalidate(0, players = $$props.players);
+    		if ('optional_cards' in $$props) optional_cards = $$props.optional_cards;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*players*/ 1) {
+    			$$invalidate(1, player_count = players.length);
+    		}
+    	};
+
+    	return [
+    		players,
+    		player_count,
+    		addPlayer,
+    		removePlayer,
+    		click_handler,
+    		click_handler_1,
+    		input_input_handler
+    	];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    const app = new App({
+    	target: document.body,
+    	props: {
+    		name: 'world'
+    	}
+    });
+
+    return app;
+
+})();
 //# sourceMappingURL=bundle.js.map

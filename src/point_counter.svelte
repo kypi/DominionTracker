@@ -41,16 +41,21 @@
     
 </script>
 
-<div>
+<div class="box">
     <!--Need to somehow to get the optional cards from the app  -->
+    <h3 class="title is-3">Victory Points: {vp_sum}</h3>
+    <table class="table">
+        <tr><th>Card</th><th>Count</th><th>Inc</th><th>Dec</th></tr>
+    
     {#each base_cards as base_card,base_card_index}
-        {base_card.name} count: {base_card.count} 
-        <!-- <input type=number bind:value={base_card.count} min=0 max=12>  -->
-        <button on:click={() => increaseBaseCount(base_card_index)}>+</button>
-        <button on:click={() => decreaseBaseCount(base_card_index)}>-</button>
-        <br>
+        <tr>     
+            <td>{base_card.name}</td><td>{base_card.count} </td>
+            <td>
+        <button class="button is-primary is-large" on:click={() => increaseBaseCount(base_card_index)}>+</button></td>
+        <td><button class="button is-danger is-large" on:click={() => decreaseBaseCount(base_card_index)}>-</button></td>
+        </tr>
     {/each}
-    <h3> Player Sum: {vp_sum}</h3>  
+    </table>
 </div>
 
 <style>
