@@ -1,7 +1,7 @@
 <script>
     let vp_sum = 0;
 	let base_cards = [
-		{name:"Estate",value:1, count:0},
+		{name:"Estate",value:1, count:3},
 		{name:"Duchy", value:3, count:0},
 		{name:"Province",value:6, count:0},
         {name:"Colony", type:"flat",value:10, count:0},
