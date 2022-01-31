@@ -2,7 +2,7 @@
 	import PointCounter from './point_counter.svelte';
 	// export let name;
 	let player_count = 2;
-	let players = [{name:"Anthony",score:0},{name:"Susan",score:0}];
+	let players = [{name:"Player",score:0},{name:"Player",score:0}];
 
 	let optional_cards = [
 		{name:"Colony", type:"flat",value:"10"},
@@ -26,7 +26,7 @@
 	Player Count: {player_count}
 	<button class='button is-primary' on:click={() => addPlayer()}>+</button>
 	<button class='button is-danger' on:click={() => removePlayer()}>-</button>
-	<div class="columns">
+	<div class="columns is-multiline">
 	{#each players as player,index}
 		<div class="column">
 		<h2 class="title is-2"> <input class="input is-primary" bind:value={player.name}/> ({player.name} P{index+1}) point counter: </h2>
