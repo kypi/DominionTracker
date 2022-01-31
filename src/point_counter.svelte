@@ -8,11 +8,6 @@
 		{name:"Curse",value:-1, count:0},
 		{name:"VP Token",value:1, count:0}
 	];
-	let optional_cards = [
-		{name:"Duke",type:"conditional",value:"0", count:0}, // 1 for each duchy
-		{name:"Gardens", type:"conditional",value:"0", count:0}, // 1 for each 10 cards?
-	]
-    let temp_sum = 0;
     function CalculateSum()
     {
         console.log("Calculating sum");
@@ -20,9 +15,7 @@
         for (let card_index = 0; card_index < base_cards.length; card_index++) {
         
             vp_sum += base_cards[card_index].count*base_cards[card_index].value;
-        }
-        // return temp_sum;
-        
+        }        
     }
     function increaseBaseCount(card_index) {
         console.log("Increasing " + base_cards[card_index].name);
@@ -37,7 +30,7 @@
         
     }
 
-    $: base_cards, CalculateSum();
+    $: base_cards, CalculateSum(); // run calculate sum when base_cards changes.
     
 </script>
 
