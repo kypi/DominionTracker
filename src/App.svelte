@@ -5,7 +5,7 @@
 	let players = [{name:"Player",score:0},{name:"Player",score:0}];
 
 	function addPlayer() {     
-		if(players.length < 9)
+		if(players.length < 10)
     	players = [...players, {name:"Player",score:0}]; // 1, 2, 3, 4, 5
 	}
 	function removePlayer() {
