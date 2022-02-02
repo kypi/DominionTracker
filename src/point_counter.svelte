@@ -19,7 +19,7 @@
     }
     function increaseBaseCount(card_index) {
         console.log("Increasing " + base_cards[card_index].name);
-        if(base_cards[card_index].count < 12)
+        // if(base_cards[card_index].count < 12)
             base_cards[card_index].count += 1;
     }
 
